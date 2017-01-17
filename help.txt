@@ -1,0 +1,10 @@
+#通过爬虫爬取深圳证券交易所当中的市场数据部分的行业市盈率
+
+# 1.爬取当前网页中的表格中的数据
+#   。中文信息在爬取之后显示为乱码
+#   。在爬取过程中使用了beautifulsoup和dataframe；使用beautifulsoup进行解析时，采用html.parser作为解析器
+# 2.在某个日期下会显示“没有找到符合条件的数据！”
+#   。判断行数是否有两行及以上
+#   。如果只有一行，那么返回None并且访问下一个日期
+# 3.读取出的表格存储格式为<class 'pandas.core.frame.DataFrame'>
+#   。将这个格式的数据存储起来是 可以通过to_csv(name, encoding='GBK', index=False)函数
